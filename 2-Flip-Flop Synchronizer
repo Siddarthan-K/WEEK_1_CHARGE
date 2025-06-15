@@ -1,0 +1,14 @@
+module synchronizer (
+    input clk,
+    input async_in,
+    output reg sync_out
+);
+
+    reg temp;
+
+    always @(posedge clk) begin
+        temp <= async_in;
+        sync_out <= temp;
+    end
+
+endmodule
